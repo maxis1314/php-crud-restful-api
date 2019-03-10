@@ -11,7 +11,7 @@ $deviceid=$input['deviceid'];
 $uuid=$input['uuid']; 
 
 
-$query = "delete from memo where $uuid='%s' and deviceid = '%s'";
+$query = "delete from memo where uuid='%s' and deviceid = '%s'";
 $ret =  exec_sql($query,array($uuid,$deviceid));
  
 
