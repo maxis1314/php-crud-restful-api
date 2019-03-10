@@ -9,10 +9,10 @@ $input = json_decode($json,true);
 $uuid=$input['uuid'];
 $title=$input['title'];
 $content=$input['content'];
+$done=$input['done'];
 
-
-$query = "insert into memo (uuid,title, content) values ('%s','%s','%s')";
-$ret =  exec_sql($query,array($uuid,$title,$content));
+$query = "replace into memo (uuid,title, content,done) values ('%s','%s','%s','%s')";
+$ret =  exec_sql($query,array($uuid,$title,$content,$done));
  
 
 echo json_encode(
