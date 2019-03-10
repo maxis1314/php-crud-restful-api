@@ -12,7 +12,7 @@ $content=$input['content'];
 $done=$input['done'];
 $deviceid=$input['deviceid'];
 
-$query = "replace into memo (uuid,title, content,done,deviceid) values ('%s','%s','%s','%s')";
+$query = "replace into memo (uuid,title, content,done,deviceid) values ('%s','%s','%s','%s','%s')";
 $ret =  exec_sql($query,array($uuid,$title,$content,$done,$deviceid));
  
 
