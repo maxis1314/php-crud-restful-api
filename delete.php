@@ -7,11 +7,11 @@ $json = file_get_contents('php://input');
 $input = json_decode($json,true);
 
 
-$id=$input['id'];
+$id=$input['uuid'];
  
 
 
-$query = "update memo set done=1 where id = '%s'";
+$query = "update memo set done=1 where uuid = '%s'";
 $ret =  exec_sql($query,array($id));
  
 
