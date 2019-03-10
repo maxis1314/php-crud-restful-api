@@ -22,7 +22,7 @@ function exec_sql($query,$params = array()){
  
     if(mysqli_query($conn, $query))
     {
-         return true;;
+         return true;
     }
     else
     {
