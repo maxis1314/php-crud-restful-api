@@ -3,7 +3,10 @@ header('Content-Type: application/json');
 
 require("lib/utils.php");
  
-$id=$_GET['id'];
+$json = file_get_contents('php://input');
+$input = json_decode($json,true);
+
+$id=$input['id'];
 
 
 $query = "select * from memo where id = '%s'";

@@ -3,11 +3,15 @@ header('Content-Type: application/json');
 
 require("lib/utils.php");
  
-$id=$_GET['id'];
+$json = file_get_contents('php://input');
+$input = json_decode($json,true);
+
+
+$id=$input['id'];
  
 
 
-$query = "delete from memo where id = '%s'";
+$query = "update memo set done=1 where id = '%s'";
 $ret =  exec_sql($query,array($id));
  
 

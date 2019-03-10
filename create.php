@@ -3,9 +3,12 @@ header('Content-Type: application/json');
 
 require("lib/utils.php");
  
- 
-$title=$_GET['title'];
-$content=$_GET['content'];
+$json = file_get_contents('php://input');
+$input = json_decode($json,true);
+
+
+$title=$input['title'];
+$content=$input['content'];
 
 
 $query = "insert into memo (title, content) values ('%s','%s')";
