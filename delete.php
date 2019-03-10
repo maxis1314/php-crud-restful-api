@@ -7,12 +7,12 @@ $json = file_get_contents('php://input');
 $input = json_decode($json,true);
 
 
-$id=$input['uuid'];
+$deviceid=$input['deviceid'];
  
 
 
-$query = "update memo set done=1 where uuid = '%s'";
-$ret =  exec_sql($query,array($id));
+$query = "delete from memo where done=1 and deviceid = '%s'";
+$ret =  exec_sql($query,array($deviceid));
  
 
 echo json_encode(
