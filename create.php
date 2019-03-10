@@ -18,7 +18,7 @@ $ret =  exec_sql($query,array($title,$content));
 echo json_encode(
     array(
         'code' => 0,
-        'ret'  => $ret?1:0
+        'ret'  => $ret
     )
 );
 ?>
