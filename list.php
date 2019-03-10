@@ -8,7 +8,7 @@ $input = json_decode($json,true);
 
 $deviceid = $input['deviceid'];
 
-$query = "select * from memo where deviceid='%s' order by id desc limit 100";
+$query = "select * from memo where deviceid='%s' order by id limit 100";
 $ret =  read_sql($query,array($deviceid ));
  
 
