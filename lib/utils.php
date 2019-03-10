@@ -12,7 +12,7 @@ function get_db_config(){
 function exec_sql($query,$params = array()){
     $config = get_db_config();
     $conn = mysqli_connect($config["host"],$config['user'], $config["pass"], $config['db']);
- 
+    mysqli_query("SET NAMES utf8");   
     if(count($params)>0){
         foreach($params as &$one){
             $one = mysqli_real_escape_string($conn,$one);
@@ -35,7 +35,7 @@ function exec_sql($query,$params = array()){
 function read_sql($query,$params = array()){
     $config = get_db_config();
     $conn = mysqli_connect($config["host"],$config['user'], $config["pass"], $config['db']);
-    
+    mysqli_query("SET NAMES utf8");   
     if(count($params)>0){
         foreach($params as &$one){
             $one = mysqli_real_escape_string($conn,$one);
